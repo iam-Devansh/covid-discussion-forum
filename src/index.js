@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import Register from "./components/Auth/Register/Register.component";
+import Login from "./components/Auth/Login/Login.component";
+
+import "semantic-ui-css/semantic.min.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
+  <React.StrictMode>  
+  <Router>
+    <Routes>
+      <Route exact path="/login" element={<Login/>} />
+      <Route exact path="/register" element={<Register/>} />
+      <Route exact path="/" element={<App/>} />
+    </Routes>
+  </Router>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
